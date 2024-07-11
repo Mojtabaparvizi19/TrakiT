@@ -1,0 +1,511 @@
+:root {
+  --gradient: linear-gradient(45deg, #271152, #062106);
+}
+
+body {
+  height: 94vh;
+  width: auto;
+  padding: 22px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  background-image: var(--gradient);
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 4s;
+  animation: bg-animation 10s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+#header {
+  z-index: 5;
+  min-width: 170px;
+  width: auto;
+  height: 80px;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 15px;
+  gap: 20px;
+  padding: 25px;
+  background-color: rgba(176, 176, 176, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+#pop-up {
+  z-index: 999;
+  position: fixed;
+  top: 160px;
+  min-height: 250px;
+
+  width: 500px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  opacity: 1;
+  transition: display 1s;
+
+  flex-direction: column;
+  border: 0.5px solid rgb(156, 156, 156);
+}
+
+.disable {
+  z-index: 2;
+  margin-top: 150px;
+  position: absolute;
+  height: 93%;
+  width: 95%;
+  background-color: rgb(233, 233, 233);
+  opacity: 0.6;
+
+  border-radius: 10px;
+}
+
+.hidden-section {
+  width: 80%;
+}
+
+.set-btn {
+  z-index: 5;
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(111, 109, 109);
+  background-color: rgb(35, 35, 35);
+  color: white;
+  margin-top: 67px;
+  cursor: pointer;
+}
+
+.set-btn:hover {
+  background-color: orange;
+}
+
+.show-popup {
+  display: flex;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#header .btn {
+  margin-left: auto;
+  height: 40px;
+}
+
+.btn button {
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgb(46, 46, 46);
+  border-color: rgb(77, 77, 77);
+  border: 0.5px solid rgb(95, 95, 95);
+  color: white;
+}
+
+.btn button:hover {
+  background-color: rgb(220, 173, 18);
+  cursor: pointer;
+  transition: 0.1s;
+  scale: 1.03;
+}
+
+#daily-result {
+  z-index: 0;
+  width: auto;
+  height: 300px;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  background-color: rgba(168, 168, 168, 0.2);
+  box-shadow: 1px 1px 10px black;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background-color 1s;
+}
+
+#daily-result:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cards {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#track-calories {
+  display: flex;
+}
+
+.big-cards {
+  display: flex;
+  width: auto;
+}
+
+.small-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.cal-limit {
+  /* background-color: rgb(26, 26, 26); */
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  color: white;
+}
+
+.gain {
+  background-color: rgb(84, 118, 94, 0.95);
+  width: 100%;
+  height: 150px;
+  text-align: center;
+
+  color: white;
+}
+
+.small {
+  /* background-color: rgb(218, 222, 221); */
+  background-color: rgba(255, 255, 255, 0.2);
+
+  min-width: 150px;
+  width: 500px;
+}
+/* progresss bar */
+.progress {
+  margin-top: 20px;
+  width: auto;
+  height: 20px;
+  background-color: rgb(219, 219, 219, 0.3);
+  border-radius: 10px;
+}
+
+.bar {
+  height: 20px;
+  width: 0;
+  max-width: 100%;
+  left: 0px;
+  border-radius: 10px;
+  background-color: rgb(84, 118, 94, 0.95);
+  transition: width 2s;
+}
+
+/* meals and workour */
+
+#container {
+  /* background-color: rgb(231, 231, 231); */
+  background-color: rgba(148, 148, 148, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 180px;
+  width: auto;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 1px 1px 10px black;
+  transition: background-color 1s;
+}
+
+input {
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 0.5px solid rgb(145, 144, 144);
+  width: auto;
+}
+
+input:focus {
+  box-shadow: 1px 1px 10px green;
+  border: 0.5px solid rgb(145, 144, 144);
+}
+
+.head {
+  display: flex;
+
+  align-items: center;
+  width: auto;
+}
+
+.add-meal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meal-btn {
+  width: 120px;
+  height: 40px;
+  background-color: rgb(39, 39, 39);
+  font-weight: bold;
+  color: white;
+  border: 0.5px solid rgb(114, 114, 114);
+  border-radius: 7px;
+}
+
+.workout-btn {
+  width: 120px;
+  height: 40px;
+  background-color: rgb(45, 45, 44);
+  font-weight: bold;
+  color: white;
+  border: 0.5px solid rgb(114, 114, 114);
+  border-radius: 7px;
+}
+
+.head button {
+  margin-left: auto;
+  height: 40px;
+  width: 120px;
+  background-color: rgb(58, 58, 58);
+  border-radius: 8px;
+  color: white;
+  border: 0.5px solid rgb(131, 131, 131);
+  cursor: pointer;
+}
+
+.head button:hover {
+  background-color: rgb(201, 132, 3);
+  scale: 1.02;
+  transition: 0.1s;
+}
+
+.filter {
+  width: 1000px;
+  height: fit-content;
+  /* background-color: rgb(241, 241, 241); */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  min-width: 180px;
+}
+
+#container:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  /* background-color: rgb(198, 200, 199); */
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px;
+  width: auto;
+  height: 50px;
+}
+
+.number {
+  text-align: center;
+  background-color: rgba(53, 53, 53, 0.4);
+  border: 0.5px solid rgb(136, 136, 136);
+  padding: 10px;
+  width: 50px;
+
+  border-radius: 8px;
+  margin-left: auto;
+  color: aliceblue;
+}
+
+.delete-btn {
+  background-color: rgb(146, 3, 3, 1);
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: auto;
+  font-size: 20px;
+}
+
+.delete-btn:hover {
+  background-color: rgb(200, 7, 7);
+  cursor: pointer;
+}
+
+.add-workout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+  transition: height 10s;
+}
+.btn-add {
+  cursor: pointer;
+  transition: scale 0.4s;
+}
+.btn-add:hover {
+  scale: 1.02;
+}
+
+#calorie-field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.add-meal {
+  height: auto;
+  gap: 20px;
+}
+.meal-from {
+  display: flex;
+  flex-direction: column;
+}
+
+.dom-meal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dom-workout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 750px) {
+  #pop-up {
+    width: 350px;
+  }
+
+  #daily-result {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .big-cards {
+    flex-direction: column;
+  }
+
+  .cal-limit {
+    width: auto;
+
+    height: 100px;
+  }
+
+  .gain {
+    width: auto;
+    height: 100px;
+  }
+
+  .small-cards {
+    flex-direction: column;
+  }
+
+  .small {
+    width: auto;
+    height: 100px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  #header {
+    height: 100px;
+  }
+
+  .delete-btn {
+    scale: 0.8;
+  }
+
+  .header-container {
+    height: 100px;
+  }
+  button {
+    scale: 0.8;
+  }
+}
+
+@media (max-width: 390px) {
+  .header-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+  }
+
+  .header-container .btn {
+    scale: 0.8;
+  }
+  #pop-up {
+    width: 200px;
+  }
+  #header {
+    height: 150px;
+  }
+
+  #header .btn {
+    width: 200px;
+    height: 40px;
+    margin-left: 15px;
+  }
+
+  .filter {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .number {
+    width: 45px;
+  }
+
+  #container {
+    flex-direction: column;
+  }
+
+  .filter {
+    width: 95%;
+  }
+}

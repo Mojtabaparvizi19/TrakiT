@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrakEXT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="hidden-section">
+      <header id="header">
+        <div class="header-container">
+          <h1>TRAKiT</h1>
+          <div class="btn">
+            <button class="set">Set New Limit</button>
+            <button id="reset">Reset All Data</button>
+          </div>
+        </div>
+      </header>
+      <div id="daily-result">
+        <div class="big-cards">
+          <div class="cal-limit cards">
+            <h2></h2>
+            <h4>Calories Limit</h4>
+          </div>
+          <div class="gain cards">
+            <h2></h2>
+            <h4>Gain or Loss</h4>
+          </div>
+        </div>
+        <div class="small-cards">
+          <div class="consumed cards small">
+            <h2>0</h2>
+            <h4>Calories Consumed</h4>
+          </div>
+          <div class="burned cards small">
+            <h2>0</h2>
+            <h4>Calories Burned</h4>
+          </div>
+          <div class="remaining cards small">
+            <h2>0</h2>
+            <h4>Calories Remaining</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="bar">
+          <p class="percent" style="width: auto; text-align: center">0%</p>
+        </div>
+      </div>
+
+      <div id="container">
+        <div class="meal-card filter">
+          <input
+            type="text"
+            name="meal-field"
+            id="meal"
+            placeholder="Filter Meal..."
+          />
+          <div class="head">
+            <h2>Meals </h2>
+            <button class="toggle-meal"><span>+</span></button>
+          </div>
+          <div class="add-meal entery-card hidden">
+            <form class="meal-form">
+              <input
+                type="text"
+                name="meal-enter"
+                id="meal-field"
+                placeholder="Add Meal..."
+              />
+              <input
+                type="text"
+                name="calorie-enter"
+                id="calorie-field"
+                placeholder="Enter Calories"
+              />
+              <button class="meal-btn btn-add">+ Add Meal</button>
+            </form>
+          </div>
+          <div class="dom-meal">
+          </div>
+        </div>
+
+        <div class="workout-card filter">
+          <input
+            type="text"
+            name="workout-field"
+            id="workout"
+            placeholder="Filter workout..."
+          />
+          <div class="head">
+            <h2>Workout</h2>
+            <button class="toggle-workout"><span>+</span></button>
+          </div>
+          <div class="add-workout hidden">
+            <form class="workout-form">
+              <input
+                type="text"
+                name="workout-enter"
+                id="workout-field"
+                placeholder="Add Workout..."
+              />
+              <input
+                style="margin-top: 10px; margin-bottom: 10px"
+                type="text"
+                name="workout-calorie-enter"
+                id="workout-calorie-field"
+                placeholder="Enter Calories"
+              />
+              <button class="workout-btn btn-add">+ Add Workout</button>
+            </form>
+          </div>
+          <div class="dom-workout">
+            
+            
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <!-- <script src="calorietracker.js"></script> -->
+  </body>
+</html>
